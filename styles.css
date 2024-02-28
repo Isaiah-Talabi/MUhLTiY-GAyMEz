@@ -24,37 +24,105 @@ body {
   font-family: "poppins", sans-serif;
   overflow-x: hidden;
   color: var(--lightColor);
+}
+
+.container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-.menu {
-  display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+#gameboard {
+  width: 650px;
+  padding: 2rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  position: relative;
+}
+
+.box {
+  height: 130px;
+  display: flex;
   align-items: center;
-}
-
-.menu h1 {
-  font-family: 'cursive';
-  margin-bottom: 20px;
-}
-
-.menu-btn {
-  margin: 10px;
-  padding: 10px 20px;
+  justify-content: center;
+  color: var(--darkColor);
   background-color: var(--orangeColor);
-  border: none;
+  font-weight: 600;
+  font-size: 5.5rem;
+  box-shadow: 2px 5px 5px #000;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.back-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: none; /* Initially hidden */
+.box:hover {
+  transform: scale(1.05);
 }
 
+.container.success .box {
+  cursor: not-allowed;
+}
+
+.modal {
+  position: absolute;
+  width: 650px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 10px 10px #000;
+  opacity: 0;
+  transform: translateX(500%);
+  transition: all 0.8s ease-in;
+}
+
+.container.success .modal {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0.8rem 4rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  width: 320px;
+  cursor: pointer;
+  background-color: var(--orangeColor);
+  color: var(--darkColor);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:hover {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+}
