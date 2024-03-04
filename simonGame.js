@@ -97,3 +97,4 @@ function updateResultBoard(result) {
 
 // Call the initialization function when the file is loaded
 initSimonGame();
+

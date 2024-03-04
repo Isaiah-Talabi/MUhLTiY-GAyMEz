@@ -111,3 +111,4 @@ function computerMove(cells) {
 
 // Call the initialize function when the file is loaded
 initialize();
+
